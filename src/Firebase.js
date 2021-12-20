@@ -10,14 +10,11 @@ import {
     addDoc,
     serverTimestamp,
 } from "firebase/firestore";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"; // import { getAnalytics } from "firebase/analytics";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"; 
+// import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-/*
-FIXME: the env keys dont work. fix and app should run
-*/
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_APIKEY,

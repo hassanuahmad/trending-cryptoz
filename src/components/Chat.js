@@ -1,4 +1,3 @@
-import SignOut from "./SignOut";
 import { useState, useEffect } from "react";
 import { db, onSnapshot, collection, limit, orderBy, query } from "../Firebase";
 import SendMessage from "./SendMessage";
@@ -29,7 +28,6 @@ function Chat() {
             <div>
                 <h1 className="text-4xl font-bold text-blue-700">CHAT</h1>
             </div>
-            <SignOut />
             {messages.map(({ id, text, photoURL }) => (
                 <div className="flex items-center my-4" key={id}>
                     <img
