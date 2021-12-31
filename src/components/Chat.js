@@ -21,25 +21,28 @@ function Chat() {
         });
     }, []);
 
-    // TODO: Add CSS to the chat
-
     return (
-        <div className="mx-5 my-12 bg-gray-100">
+        <div className="mx-5 my-12 h-full bg-gray-200">
             <div>
                 <h1 className="text-4xl font-bold text-blue-700">CHAT</h1>
             </div>
-            {messages.map(({ id, text, photoURL }) => (
-                <div className="flex items-center my-4" key={id}>
-                    <img
-                        className="rounded-full"
-                        src={photoURL}
-                        height="50px"
-                        width="50px"
-                        alt=""
-                    />
-                    <p className="ml-5">{text}</p>
-                </div>
-            ))}
+            <div className="flex flex-col">
+                {messages.map(({ id, text, photoURL }) => (
+                    <div>
+                        <div
+                            className="flex flex-row border-b border-gray-300 m-1 "
+                            key={id}
+                        >
+                            <img
+                                className="rounded-full object-scale-down h-12 w-12"
+                                src={photoURL}
+                                alt=""
+                            />
+                            <p className="ml-3 break-all">{text}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
             <SendMessage />
         </div>
     );

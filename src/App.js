@@ -5,9 +5,15 @@ import ChatArea from "./components/ChatArea";
 function App() {
     return (
         <div className="flex bg-blue-50">
-            <Sidebar />
-            <Crypto />
-            <ChatArea />
+            <div>
+                <Sidebar />
+            </div>
+            <div>
+                <Crypto />
+            </div>
+            {/* <div className="flex-grow">
+                <ChatArea />
+            </div> */}
         </div>
     );
 }

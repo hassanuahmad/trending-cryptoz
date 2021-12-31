@@ -29,24 +29,22 @@ const Crypto = () => {
     }, []);
 
     return (
-        <div className="w-96 mx-5 my-12 bg-gray-100">
-            <div>
-                <h1 className="text-4xl font-bold text-blue-700">
-                    CRYPTOCURRENCY
-                </h1>
+        <div className="px-5 py-12">
+            <div className="mx-8">
+                <h1 className="text-4xl font-bold text-blue-700">CRYPTOS</h1>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 m-8">
                 {gainCryptoList.map(
                     (name, index) =>
-                        index < 4 && <GainCrypto key={index} name={name} />
+                        index < 6 && <GainCrypto key={index} name={name} />
                 )}
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 m-8">
                 {loseCryptoList.map(
                     (name, index) =>
-                        index < 4 && <LossCrypto key={index} name={name} />
+                        index < 6 && <LossCrypto key={index} name={name} />
                 )}
             </div>
         </div>

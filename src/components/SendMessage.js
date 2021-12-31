@@ -25,14 +25,27 @@ function SendMessage() {
     };
 
     return (
-        <div>
+        <div className="m-2">
             <form onSubmit={sendMessage}>
-                <input
-                    value={msg}
-                    onChange={(e) => setMsg(e.target.value)}
-                    placeholder="Message..."
-                />
-                <button type="submit">Send</button>
+                <div className="flex">
+                    <div className="flex-grow mr-2">
+                        <textarea
+                            value={msg}
+                            maxLength={200}
+                            onChange={(e) => setMsg(e.target.value)}
+                            placeholder="Message..."
+                            className="px-4 py-2 w-full rounded "
+                        />
+                    </div>
+                    <div>
+                        <button
+                            type="submit"
+                            className="bg-blue-700 hover:bg-blue-500 text-white font-bold px-4 py-2 rounded"
+                        >
+                            Send
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     );
