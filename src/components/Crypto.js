@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import GainCrypto from "./GainCrypto";
 import LossCrypto from "./LossCrypto";
 
@@ -8,7 +9,7 @@ const Crypto = () => {
     const [loseCryptoList, setLoseCryptoList] = useState([]);
 
     useEffect(() => {
-        var options = {
+        let options = {
             method: "GET",
             url: "https://crypto-update-live.p.rapidapi.com/top-gainers-losers",
             headers: {
@@ -29,15 +30,23 @@ const Crypto = () => {
     }, []);
 
     return (
-        <div className="px-5 py-12">
+        <div className="px-4 py-8">
             <div className="mx-8">
-                <h1 className="text-4xl font-bold text-blue-700">CRYPTOS</h1>
+                <h1 className="text-4xl font-bold text-blue-700">
+                    TRENDING CRYPTOZ
+                </h1>
             </div>
+
+            {/* TODO: add the funtion when click the crypto coin, open up a new page with details */}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 m-8">
                 {gainCryptoList.map(
                     (name, index) =>
-                        index < 6 && <GainCrypto key={index} name={name} />
+                        index < 6 && (
+                            <Link to={`/gaincrypto/${index}`}>
+                                <GainCrypto key={index} name={name} />
+                            </Link>
+                        )
                 )}
             </div>
 

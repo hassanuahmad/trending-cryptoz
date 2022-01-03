@@ -1,20 +1,19 @@
-import Sidebar from "./components/Sidebar";
-import Crypto from "./components/Crypto";
-import ChatArea from "./components/ChatArea";
+import Navbar from "./components/Navbar";
+import CryptoChatArea from "./components/CryptoChatArea";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import About from "./components/About";
+import GainCryptoDetails from "./components/GainCryptoDetails";
 
 function App() {
     return (
-        <div className="flex bg-blue-50">
-            <div>
-                <Sidebar />
-            </div>
-            <div>
-                <Crypto />
-            </div>
-            {/* <div className="flex-grow">
-                <ChatArea />
-            </div> */}
-        </div>
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route exact path="/" element={<CryptoChatArea />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/gaincrypto/:id" element={<GainCryptoDetails />} />
+            </Routes>
+        </Router>
     );
 }
 

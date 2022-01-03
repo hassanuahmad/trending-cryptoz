@@ -16,7 +16,7 @@ function SignInBtn() {
     return (
         <div>
             <button
-                className="bg-blue-700 hover:bg-blue-500 text-white font-bold p-4 rounded w-full"
+                className="border-4 border-blue-700 hover:bg-blue-700 hover:text-white text-black font-bold px-4 py-2 rounded w-full"
                 onClick={signInWithGoogle}
             >
                 SIGN IN

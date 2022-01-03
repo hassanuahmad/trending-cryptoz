@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { auth, db, collection, addDoc, serverTimestamp } from "../Firebase";
 
-function SendMessage() {
+function SendMessage({ scroll }) {
     const [msg, setMsg] = useState("");
 
     // gets the user id & photoURL given to us by firebase
@@ -22,6 +22,7 @@ function SendMessage() {
 
         await addDoc(collectionRef, payload);
         setMsg("");
+        scroll.current.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
